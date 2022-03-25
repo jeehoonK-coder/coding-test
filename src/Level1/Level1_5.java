@@ -1,4 +1,4 @@
-//Level1
+package Level1;//Level1
 //[카카오인턴] 키패드 누르기
 
 public class Level1_5 {

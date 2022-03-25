@@ -1,4 +1,4 @@
-//Level1
+package Level1;//Level1
 //신고 결과 받기 ( 2020 KAKAO BLIND RECRUITMENT )
 //22.03.24
 

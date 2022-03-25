@@ -1,4 +1,4 @@
-//Level1
+package Level1;//Level1
 //소수 만들기 ( Summer/Winter Coding )
 
 public class Level1_10 {

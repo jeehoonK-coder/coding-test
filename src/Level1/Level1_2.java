@@ -1,4 +1,4 @@
-//Level1
+package Level1;//Level1
 //폰켓몬
 
 import java.util.*;

@@ -1,4 +1,4 @@
-//Level1
+package Level1;//Level1
 //3진법 뒤집기
 
 import java.util.ArrayList;

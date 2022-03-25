@@ -1,4 +1,4 @@
-//Level1
+package Level1;//Level1
 //K번째 수
 //22.03.11
 
