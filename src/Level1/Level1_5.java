@@ -1,5 +1,7 @@
-package Level1;//Level1
+//Level1
 //[카카오인턴] 키패드 누르기
+
+package Level1;
 
 public class Level1_5 {
     public static void main(String[] args) {

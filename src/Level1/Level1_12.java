@@ -1,6 +1,8 @@
-package Level1;//Level1
+//Level1
 //2021 카카오 채용연계형 인턴쉽
 //2022.03.23
+
+package Level1;
 
 
 import java.util.*;

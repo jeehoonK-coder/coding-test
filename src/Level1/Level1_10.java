@@ -1,5 +1,7 @@
-package Level1;//Level1
+//Level1
 //소수 만들기 ( Summer/Winter Coding )
+
+package Level1;
 
 public class Level1_10 {
     public static void main(String[] args) {

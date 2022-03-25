@@ -1,6 +1,8 @@
-package Level1;//Level1
+//Level1
 //로또의 최고 순위와 최저 순위
 //22.03.24
+
+package Level1;
 
 import java.util.stream.IntStream;
 

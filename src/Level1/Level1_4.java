@@ -1,7 +1,9 @@
-package Level1;//Level1
+//Level1
 //약수의 개수와 덧셈
 //22.03.12
 //제곱인 것을 어떤방식으로 알아야 하는가
+
+package Level1;
 
 public class Level1_4 {
     public static void main(String[] args) {

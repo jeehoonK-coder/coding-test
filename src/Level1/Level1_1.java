@@ -1,5 +1,6 @@
-package Level1;//Level1
+//Level1
 //완주하지 못한 선수
+package Level1;
 
 import java.util.*;
 

@@ -1,5 +1,6 @@
-package Level1;//Level1
+//Level1
 //3진법 뒤집기
+package Level1;
 
 import java.util.ArrayList;
 import java.util.List;

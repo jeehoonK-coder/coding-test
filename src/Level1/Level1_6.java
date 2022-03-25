@@ -1,5 +1,7 @@
-package Level1;//Level1
+//Level1
 //실패율 ( 2019 KAKAO BLIND )
+
+package Level1;
 
 import java.util.Arrays;
 

@@ -1,5 +1,7 @@
-package Level1;//Level1
+//Level1
 //두개 뽑아서 더하기 ( 월간 코드 챌린지 시즌1 )
+
+package Level1;
 
 import java.util.*;
 
