@@ -26,14 +26,41 @@ public class Back_10800 {
         int[] answer = new int[n];
         int[] color = new int[n];
         int weight = 0;
+        int cur = 0;
+        int[] colorArr = new int[n];
         for(int i = 0; i < n; i++){
             int col = ballList[i][0] -1;
             int size = ballList[i][1];
             int index = ballList[i][2];
+
+            if(i == n-1){
+                answer[index] = weight - color[col];
+                break;
+            }
+
             answer[index] = weight - color[col];
 
-            color[col] += size;
-            weight += size;
+            if(cur == 0 && size == ballList[i+1][1]){
+                cur += size;
+                colorArr[col] += size;
+            }
+            else if(size == ballList[i+1][1]){
+                cur += size;
+                colorArr[col] += size;
+            }
+            else if(cur == 0){
+                color[col] += size;
+                weight += size;
+            }
+            else{
+                for(int j = 0; j < n; j++) color[j] += colorArr[j];
+                color[col] += size;
+                weight += size;
+                weight += cur;
+                colorArr = new int[n];
+                cur = 0;
+            }
+
         }
 
         for(int i = 0; i < n; i++){
