@@ -15,29 +15,15 @@ public class Back_1463 {
         int[] dp = new int[n+1];
         dp[1] = 0;
         for(int i = 2; i <= n; i++){
-            int a = -1;
-            int b = -1;
+            dp[i] = dp[i-1]+1;
             if(i%2 == 0){
-                a = dp[i/2]+1;
+                dp[i] = Math.min(dp[i/2]+1,dp[i]);
             }
             if(i%3 == 0){
-                b = dp[i/3]+1;
-            }
-            if(a >= 0 && b >= 0){
-                dp[i] = Math.min(Math.min(dp[i-1]+1,a),b);
-            }
-            else if( a < 0 && b <0){
-                dp[i] = dp[i-1]+1;
-            }
-            else if( a > 0){
-                dp[i] = Math.min(dp[i-1]+1,a);
-            }
-            else{
-                dp[i] = Math.min(dp[i-1]+1,b);
+                dp[i] = Math.min(dp[i/3]+1,dp[i]);
             }
         }
         System.out.println(dp[n]);
-
     }
 
 
