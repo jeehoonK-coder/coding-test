@@ -1,4 +1,5 @@
-//Back_1238
+//Back_1238 파티
+//다익스트라
 
 package ShortGrow;
 
@@ -6,14 +7,29 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
+
+
+class Town implements Comparable<Town> {
+    int end;
+    int weight;
+
+    Town(int end, int weight) {
+        this.end = end;
+        this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Town arg0) {
+        return weight - arg0.weight;
+    }
+}
 
 public class Back_1238 {
 
-    static int N,M,X,Max;
-    static int[][] Array, MinArray;
+    static int N,M,X;
+    static final int INF = 987654321;
+    static ArrayList<ArrayList<Town>> arrList, reverse_arrList;
 
     public void solution() throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,44 +38,60 @@ public class Back_1238 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
         X = Integer.parseInt(st.nextToken());
-        Array = new int[N+1][N+1];
-        MinArray = new int[N+1][N+1];
-        for(int i = 0; i < M; i++){
+        arrList = new ArrayList<>(); // 문제의 입력을 그대로 받은 배열
+        reverse_arrList = new ArrayList<>();
+
+        for (int i = 0; i <= N; i++) {
+            arrList.add(new ArrayList<>());
+            reverse_arrList.add(new ArrayList<>());
+        }
+        for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
-            Array[Integer.parseInt(st.nextToken())][Integer.parseInt(st.nextToken())] = Integer.parseInt(st.nextToken());
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+            int weight = Integer.parseInt(st.nextToken());
+
+            arrList.get(start).add(new Town(end, weight));
+            reverse_arrList.get(end).add(new Town(start, weight));
         }
 
-        int max = -1;
-        for(int i = 1; i < N+1; i++){
+        int[] dist1 = Dijkstra(arrList);
+        int[] dist2 = Dijkstra(reverse_arrList);
 
-        }
-        for(int i = 1; i < N+1; i++){
-            max = Math.max(max, MinArray[i][X] + MinArray[X][i]);
+        int ans = 0;
+        for (int i = 1; i <= N; i++) {
+            ans = Math.max(ans, dist1[i] + dist2[i]);
         }
 
-        bw.write(max+"");
+        bw.write(ans+"");
         bw.flush();
     }
 
-    public void Dijkstra(int start, int end, int[] check, int total){
-        Queue<Integer> q = new LinkedList<>();
-        q.add(X);
+    public static int[] Dijkstra(ArrayList<ArrayList<Town>> a) {
+        PriorityQueue<Town> pq = new PriorityQueue<>();
+        pq.offer(new Town(X, 0));
 
-        boolean[] visited = new boolean[N+1];
+        boolean[] check = new boolean[N + 1];
+        int[] dist = new int[N + 1];
+        Arrays.fill(dist, INF);
+        dist[X] = 0;
 
-        while(!q.isEmpty()){
-            int a = q.poll();
-            visited[a] = true;
-            for(int i = 1; i < M+1 ; i++){
-                if(Array[a][i] > 0 && !visited[i]){
+        while (!pq.isEmpty()) {
+            Town curTown = pq.poll();
+            int cur = curTown.end;
 
+            if (!check[cur]) {
+                check[cur] = true;
+
+                for (Town town : a.get(cur)) {
+                    if (!check[town.end] && dist[town.end] > dist[cur] + town.weight) {
+                        dist[town.end] = dist[cur] + town.weight;
+                        pq.add(new Town(town.end, dist[town.end]));
+                    }
                 }
-
             }
-
         }
-
-
+        return dist;
     }
 
     public static void main(String[] args) throws Exception {
