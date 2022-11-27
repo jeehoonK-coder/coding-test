@@ -18,7 +18,7 @@ public class Back_11723 {
     static String Str;
     static Set<Integer> set = new HashSet<>();
 
-
+    /*
     public void solution() throws Exception {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -64,6 +64,56 @@ public class Back_11723 {
         }
 
         bw.flush();
+
+    }
+     */
+
+    //비트마스킹 활용
+    static int switchForNums = 0;
+
+    public void solution() throws Exception{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st;
+        M = Integer.parseInt(br.readLine());
+
+        for(int i = 0; i < M; i++){
+            st = new StringTokenizer(br.readLine());
+            Str = st.nextToken();
+            int num;
+            switch(Str){
+                case "add":
+                    num = Integer.parseInt(st.nextToken());
+                    switchForNums = switchForNums | (1<<num);
+                    break;
+
+                case "remove":
+                    num = Integer.parseInt(st.nextToken());
+                    switchForNums = switchForNums & ~(1<<num);
+                    break;
+
+                case "check":
+                    num = Integer.parseInt(st.nextToken());
+                    bw.write(((switchForNums & (1<<num)) >> num) + "\n");
+                    break;
+
+                case "toggle":
+                    num = Integer.parseInt(st.nextToken());
+                    switchForNums = switchForNums ^ (1<<num);
+                    break;
+
+                case "all":
+                    switchForNums = ~0;
+                    break;
+
+                case "empty":
+                    switchForNums = 0;
+                    break;
+            }
+        }
+
+        bw.flush();
+        bw.close();
 
     }
 
