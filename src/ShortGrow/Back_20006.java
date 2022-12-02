@@ -74,12 +74,7 @@ public class Back_20006 {
                 else {
                     List<Player> list = List.get(index);
                     if (list.size() == M) {
-                        Collections.sort(list);
-                        bw.write("Started!" + "\n");
-                        for (Player p : list) {
-                            bw.write(p.p + " " + p.n + "\n");
-                        }
-                        List.remove(index);
+                        index++;
                         continue;
                     }
                     if (Math.abs(list.get(0).p - player.p) <= 10) {
