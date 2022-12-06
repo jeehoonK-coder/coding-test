@@ -21,7 +21,7 @@ public class Back_1697 {
             int answer = BFS(A,B);
             System.out.println(answer);
         }
-
+        //test code
     }
 
     public int BFS(int a, int b){
