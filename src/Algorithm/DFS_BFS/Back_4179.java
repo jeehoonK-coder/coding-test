@@ -64,16 +64,16 @@ public class Back_4179 {
                 fire();
                 count++;
             }
+            if(a[0] == 0 || a[1] == 0 || a[0] == R-1 || a[1] == C-1){
+                if(Array[a[0]][a[1]] == '.')
+                    return a[2];
+            }
             if(Array[a[0]][a[1]] == 'F'){
                 continue;
             }
             for(int k = 0; k < 4; k++){
                 int nx = a[0]+dx[k];
                 int ny = a[1]+dy[k];
-                if(nx == 0 || ny == 0 || nx == R-1 || ny == C-1){
-                    if(Array[nx][ny] == '.')
-                        return a[2]+1;
-                }
                 if(nx >= 0 && nx < R && ny >= 0 && ny < C){
                     if(Array[nx][ny] == '.' && !check[nx][ny]){
                         q.add(new int[]{nx,ny,a[2]+1});
