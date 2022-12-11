@@ -14,8 +14,6 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 
-
-// 벽을 뚫은 루트와 아닌 루트로 나누어서 진행 하지만 시간이 오래걸림
 public class Back_2206 {
 
     static class Point{
