@@ -11,9 +11,9 @@ import java.util.*;
 
 public class Back_9466 {
 
-    static int  T,N;
+    static int  T,N,Count;
     static int[] Array;
-    static int[] AnswerArray;
+    static int[] Visited,Finished;
 
     public void solution() throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,22 +25,16 @@ public class Back_9466 {
             N = Integer.parseInt(br.readLine());
             st = new StringTokenizer(br.readLine());
             Array = new int[N+1];
-            AnswerArray = new int[N+1];
+            Visited = new int[N+1];
+            Finished = new int[N+1];
+            Count = 0;
             for(int i = 1; i <= N; i++){
                 Array[i] = Integer.parseInt(st.nextToken());
             }
             for(int i = 1; i <=N; i++){
-                int[] check = new int[N+1];
-                if( AnswerArray[i] == 0) DFS(i,i,check);
-
+                DFS(i);
             }
-            int count = 0;
-            for(int i = 1; i <= N; i++){
-                if(AnswerArray[i] == 0){
-                    count++;
-                }
-            }
-            bw.write(count+"\n");
+            bw.write(N-Count+"\n");
         }
 
         bw.flush();
@@ -48,20 +42,24 @@ public class Back_9466 {
         br.close();
     }
 
-    public boolean DFS(int start, int end, int[] check){
-        check[start] = 1;
-        if(Array[start] == end){
-            AnswerArray[start] = 1;
-            return true;
+    public void DFS(int start){
+        if(Visited[start] == 1){
+            return;
         }
-        if(check[Array[start]] == 0 && AnswerArray[Array[start]] == 0){
-            if(DFS(Array[start], end, check)){
-                AnswerArray[start] = 1;
-                return true;
+
+        Visited[start] = 1;
+        int next = Array[start];
+
+        if(Visited[next] != 1) DFS(next);
+        else{
+            if(Finished[next] != 1){
+                Count++;
+                for(int i = next; i != start; i = Array[i]){
+                    Count++;
+                }
             }
-            return false;
         }
-        else return false;
+        Finished[start] = 1;
     }
 
     public static void main(String[] args) throws Exception{
