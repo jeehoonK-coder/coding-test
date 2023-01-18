@@ -1,5 +1,6 @@
 //Back_10830 행렬 제곱
 //분할 정복(Divde and Conquer) 사용
+//1493,
 
 package ShortGrow;
 

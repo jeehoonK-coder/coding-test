@@ -1,4 +1,6 @@
 //Back_12865 평범한 배낭
+//DP문제
+//12920, 2293
 
 package ShortGrow;
 
