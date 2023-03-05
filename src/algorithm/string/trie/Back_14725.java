@@ -1,7 +1,7 @@
 //Back_14725 개미굴
 //문자열, 트라이
 
-package algorithm.string;
+package algorithm.string.trie;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

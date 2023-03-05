@@ -7,7 +7,7 @@
  *  2. DFS를 통하여 탐색
  */
 
-package algorithm.string;
+package algorithm.string.trie;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

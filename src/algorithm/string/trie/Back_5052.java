@@ -1,7 +1,7 @@
 //Back_5052 전화번호 목록
 //문자열, 트라이
 
-package algorithm.string;
+package algorithm.string.trie;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
