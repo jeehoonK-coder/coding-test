@@ -2,7 +2,7 @@
 //DFS, DP
 //BFS로 했으나 실패 -> DP로 재귀돌리는 방법도 있음
 
-package ShortGrow;
+package algorithm.dfs_bfs;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

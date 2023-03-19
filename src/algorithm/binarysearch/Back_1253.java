@@ -1,7 +1,7 @@
 //Back_1253 좋다
 //정렬, 이분탐색
 
-package ShortGrow;
+package algorithm.binarysearch;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -1,7 +1,7 @@
 //Back_1493 박스채우기
 //분할 정복 사용
 
-package ShortGrow;
+package algorithm.dynamicprogramming;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

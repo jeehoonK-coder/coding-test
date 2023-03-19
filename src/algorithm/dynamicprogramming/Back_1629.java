@@ -1,7 +1,7 @@
 //Back_1629 곱셈 (실버)
 //분할 정복
 
-package ShortGrow;
+package algorithm.dynamicprogramming;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
