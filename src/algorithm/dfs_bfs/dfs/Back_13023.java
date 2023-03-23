@@ -2,6 +2,9 @@
  *  23.03.23
  *  Back_13023 ABCDE
  *  DFS
+ *
+ *  1. 전형적인 DFS문제
+ *  2. ArrayList를 사용하였지만 LinkedList를 사용한다면 더 빠를 것..
  */
 
 package algorithm.dfs_bfs.dfs;
@@ -43,6 +46,7 @@ public class Back_13023 {
                 break;
             }
             check = new int[N];
+            check[i] = 1;
             DFS(i, 0,check);
         }
         bw.write(Answer+"");
@@ -52,12 +56,13 @@ public class Back_13023 {
     }
 
     public void DFS(int num, int depth, int[] check){
-        if(depth == 3){
+        if(depth == 4){
             Answer = 1;
+            return;
         }
-        check[num] = 1;
         for(int n : RelationList[num]){
             if(check[n] == 0){
+                check[n] = 1;
                 DFS(n, depth+1, check);
                 check[n] = 0;
             }
