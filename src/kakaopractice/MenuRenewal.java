@@ -4,7 +4,7 @@
 
 
 
-package KakaoPractice;
+package kakaopractice;
 
 import java.util.*;
 

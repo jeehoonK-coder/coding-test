@@ -1,7 +1,7 @@
 //2021 KAKAO BLIND RECRUITMENT
 //순위 검색
 
-package KakaoPractice;
+package kakaopractice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
