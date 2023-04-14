@@ -9,6 +9,9 @@ ex) List<int[]>[] ArrayList = new List[N+1];
 
 Deque<Integer> deque = new ArrayDeque<>(); // 큐와 스텍을 합친 것, 덱 (No.3190)
 
+String 대소 비교 (compareTo) str.compareTo(str1) str이 더 크면 1 반환 반대면 -1 반환
+String str = new String(char[]arr) //char 배열을 string으로 바꾸는 법
+
 //hashmap을 foreach쓰는 법 (No.14725)
 HashMap.forEach((strKey, strValue) -> {
             System.out.println(strKey);
@@ -87,4 +90,3 @@ cf) 모든좌표를 순서대로 하나씩 찾아보면서 DFS를 돌리는 상�
 - 2부터 시작하여 자신의 배수가 되는 수를 지워나가는 방법. i*i <= N 범위안에 있는 i만큼만 지우면 된다. (2부터 시작하여 2의배수들 4,6,8...을 다 지우고 그다음에 3의 배수들 6,9,12를 지우는 방식)
 
 
-String 대소 비교 (compareTo)
